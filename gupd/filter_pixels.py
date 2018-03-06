@@ -19,7 +19,7 @@ def strip_low_values(in_file_path, out_file_path):
 
 
 curr_dir = os.path.dirname(os.path.realpath(__file__))
-infile = os.path.join(curr_dir, 'south_australia_landcover_30x36_lambert_cropped.tif')
-outfile = os.path.join(curr_dir, 'output.tif')
+infile = os.path.join(curr_dir, '..', 'assets', 'south_australia_landcover_33m_lambert_cropped.tif')
+outfile = os.path.join(curr_dir, '..', 'assets', 'filtered_output.tif')
 strip_low_values(infile, outfile)
 print('Wrote output to %s' % outfile)
