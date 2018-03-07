@@ -18,7 +18,7 @@ def check_polarity(lower, higher):
     return
 
 
-def strip_low_values(in_file_path, out_file_path, x1, y1, x2, y2):
+def update_values(in_file_path, out_file_path, x1, y1, x2, y2):
     ds = gdal.Open(in_file_path, gdal.gdalconst.GA_ReadOnly)
     band = ds.GetRasterBand(1)
     print('Source GeoTIFF attributes:')
@@ -62,7 +62,7 @@ if __name__ == '__main__':
     curr_dir = os.path.dirname(os.path.realpath(__file__))
     infile = os.path.join(curr_dir, '..', 'assets', 'south_australia_landcover_33m_lambert_cropped.tif')
     outfile = os.path.join(curr_dir, '..', 'assets', 'updated_output.tif')
-    strip_low_values(infile, outfile, minx, miny, maxx, maxy)
+    update_values(infile, outfile, minx, miny, maxx, maxy)
     print('Wrote output to %s' % outfile)
 
 
